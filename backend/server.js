@@ -5,6 +5,8 @@ import multer from "multer";
 import { v2 as cloudinary } from "cloudinary";
 import bodyParser from "body-parser";
 
+const PORT = process.env.PORT || 4000;
+
 dotenv.config();
 const app = express();
 app.use(cors());
@@ -116,6 +118,6 @@ app.get("/api/remitos/url", async (req, res) => {
   res.json(remito);
 }); */
 
-app.listen(process.env.PORT || 4000, () => {
-  console.log("Servidor corriendo en puerto 4000");
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en puerto ${PORT}`);
 });
