@@ -63,10 +63,6 @@ app.post("/api/remitos", upload.single("foto"), async (req, res) => {
   }
 });
 
-/* app.get("/api/remitos", (req, res) => {
-  res.json(remitos);
-}); */
-
 app.get("/api/remitos", async (req, res) => {
   try {
     const resultados = await cloudinary.search
@@ -108,15 +104,6 @@ app.get("/api/remitos/url", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
-/* app.put("/api/remitos/:id", (req, res) => {
-  const id = Number(req.params.id);
-  const nuevoNumero = req.body.numero;
-  const remito = remitos.find(r => r.id === id);
-  if (!remito) return res.status(404).json({ error: "No encontrado" });
-  remito.numero = nuevoNumero;
-  res.json(remito);
-}); */
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);
