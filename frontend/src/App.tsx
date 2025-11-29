@@ -89,6 +89,11 @@ export default function App() {
             }}
           />
         </Button>
+        <Typography>
+          {file
+            ? `Archivo seleccionado: ${file.name}`
+            : "Ningún archivo seleccionado"}
+        </Typography>
 
         <Button variant="contained" color="primary" onClick={uploadRemito}>
           Cargar Remito
