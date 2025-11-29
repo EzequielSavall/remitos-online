@@ -11,7 +11,7 @@ import {
   ListItem,
 } from "@mui/material";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000/api";
+const API_URL = "https://remitos-online-production.up.railway.app/api";
 
 export default function App() {
   const [remitos, setRemitos] = useState([]);
