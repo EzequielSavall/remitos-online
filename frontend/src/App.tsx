@@ -10,6 +10,7 @@ import {
   List,
   ListItem,
 } from "@mui/material";
+import { formatDate } from "./utils/dateUtils";
 
 const API_URL = "https://remitos-online-production.up.railway.app/api";
 
@@ -107,7 +108,7 @@ export default function App() {
       <List>
         {remitos.map((r: RemitoResponse) => (
           <ListItem key={r.public_id}>
-            {r.numero}
+            {r.numero} - {formatDate(r.fecha)}
             <Typography
               component="span"
               ml={2}
